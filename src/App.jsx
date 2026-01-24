@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Analytics } from '@vercel/analytics/react';
 import "./App.css";
 
 import Header from "./components/header/header";
@@ -25,7 +26,9 @@ function App() {
       <Footer />
 
       <WhatsappIcon className="whatsapp-Icon" size={55} />
+      <Analytics />
     </BrowserRouter>
+
   );
 }
 
