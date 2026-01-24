@@ -1,0 +1,219 @@
+.nosotros {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+
+/* HERO SECTION */
+.nosotros-hero {
+  padding: 100px 20px;
+  text-align: center;
+  background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+              url('https://www.transparenttextures.com/patterns/cubes.png'); /* Textura sutil */
+}
+
+.hero-content span {
+  color: #4da3ff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #0a1a3a;
+  margin-bottom: 20px;
+}
+
+.hero-content h1 strong {
+  color: #4da3ff;
+}
+
+.hero-content p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #ffffff;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* GRID SECTION (IMAGEN + TEXTO) */
+.nosotros-grid {
+  padding: 80px 5%;
+  background-color: #f8faff;
+}
+
+.grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 450px;
+  background-color: #0a1a3a;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Esto hará que tu imagen llene el espacio */
+}
+
+.grid-text h2 {
+  font-size: 2.2rem;
+  color: #0a1a3a;
+  margin-bottom: 20px;
+}
+
+.grid-text p {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.stats-box {
+  display: flex;
+  gap: 40px;
+}
+
+.stat h3 {
+  font-size: 2.5rem;
+  color: #4da3ff;
+  margin-bottom: 5px;
+}
+
+.stat p {
+  font-weight: 600;
+  color: #0a1a3a;
+}
+
+/* VALUES SECTION */
+.nosotros-values {
+  padding: 100px 5%;
+  text-align: center;
+}
+
+.values-header h2 {
+  font-size: 2.5rem;
+  color: #0a1a3a;
+  margin-bottom: 60px;
+}
+
+.values-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.value-card {
+  padding: 40px;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #eee;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(77, 163, 255, 0.1);
+  border-color: #4da3ff;
+}
+
+/* Contenedor circular para el icono */
+.value-icon-container {
+  width: 80px;
+  height: 80px;
+  background-color: #f0f7ff; /* Azul muy clarito de fondo */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+  transition: all 0.3s ease;
+}
+
+/* El icono de FontAwesome en sí */
+.value-icon-fa {
+  font-size: 2.5rem;
+  color: #4da3ff; /* Tu azul característico */
+  transition: all 0.3s ease;
+}
+
+/* Efecto Hover en la tarjeta que afecta al icono */
+.value-card:hover .value-icon-container {
+  background-color: #4da3ff; /* El fondo se vuelve azul */
+  transform: scale(1.1);
+}
+
+.value-card:hover .value-icon-fa {
+  color: #ffffff; /* El icono se vuelve blanco */
+}
+
+/* Ajuste del título para que no pegue con el icono */
+.value-card h3 {
+  color: #0a1a3a;
+  margin-top: 10px;
+  font-size: 1.4rem;
+}
+
+.value-card h3 {
+  color: #0a1a3a;
+  margin-bottom: 15px;
+}
+
+/* CTA SECTION */
+.nosotros-cta {
+  height: 400px;
+  background: linear-gradient(rgba(10, 26, 58, 0.8), rgba(10, 26, 58, 0.8)), 
+              url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1350&q=80'); /* Imagen de oficina/seguros */
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  margin: 40px 20px;
+  border-radius: 20px;
+}
+
+.cta-btn {
+  margin-top: 25px;
+  padding: 15px 35px;
+  background-color: #4da3ff;
+  border: none;
+  border-radius: 30px;
+  color: #0a1a3a;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: white;
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 2.2rem; }
+  .grid-container { grid-template-columns: 1fr; }
+  .grid-image { order: 2; }
+  .grid-text { order: 1; text-align: center; }
+  .stats-box { justify-content: center; }
+  .image-placeholder { height: 300px; }
+}

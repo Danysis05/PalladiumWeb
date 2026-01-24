@@ -1,0 +1,146 @@
+/* Variables para facilitar cambios de color */
+:root {
+  --primary-blue: #0056b3; /* Azul elegante */
+  --light-blue-shadow: rgba(0, 86, 179, 0.15);
+  --bg-white: #ffffff;
+  --text-dark: #333333; /* Gris muy oscuro en lugar de negro puro */
+}
+
+/* Contenedor Principal: Centra todo y limita el ancho para que solo se vea uno */
+.carrusel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Ajusta este ancho máximo según qué tan grande quieres que se vea el logo único */
+  max-width: 400px;
+  margin: 40px auto; /* Centrado en la página */
+  padding: 20px 0;
+}
+
+/* El riel que se mueve */
+.proveedores-carrusel-track {
+  display: flex;
+  gap: 0; /* Sin gap, cada tarjeta ocupa el 100% del espacio */
+  overflow-x: auto; /* Permite el scroll horizontal */
+  scroll-behavior: smooth;
+  padding: 10px 0;
+  width: 100%;
+
+  /* MAGIA CSS SNAP: Esto fuerza a que el scroll se detenga exactamente en un elemento */
+  scroll-snap-type: y mandatory; /* 'y' aquí por un bug común en x, funciona como x */
+  scroll-snap-type: x mandatory; /* La forma correcta */
+  
+  /* Ocultar barra de scroll en diferentes navegadores para limpieza visual */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE y Edge */
+}
+
+.proveedores-carrusel-track::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* La Tarjeta Individual (ahora es la etiqueta <a>) */
+.proveedor-card {
+  /* CRUCIAL: Obliga a la tarjeta a ocupar el 100% del ancho del contenedor padre */
+  flex: 0 0 100%;
+  /* CRUCIAL: Define dónde se "engancha" la tarjeta al hacer scroll */
+  scroll-snap-align: center;
+
+  height: 140px; /* Un poco más alto para más elegancia */
+  background: var(--bg-white);
+  border-radius: 20px; /* Bordes más redondeados y modernos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px; /* Un pequeño margen visual entre los snaps */
+  
+  /* Sombra azulada suave en lugar de borde negro */
+  box-shadow: 0 10px 30px -5px var(--light-blue-shadow);
+  transition: all 0.3s ease;
+  text-decoration: none; /* Quitar subrayado del enlace */
+}
+
+/* Efecto Hover en la tarjeta */
+.proveedor-card:hover {
+  transform: translateY(-5px); /* Se levanta ligeramente */
+  box-shadow: 0 15px 35px -10px rgba(0, 86, 179, 0.3); /* Sombra más intensa */
+}
+
+.proveedor-card img {
+  max-width: 70%; /* Logos un poco más grandes pero contenidos */
+  max-height: 80px;
+  object-fit: contain;
+  filter: grayscale(20%); /* Un toque sutil de elegancia: desaturar ligeramente */
+  transition: filter 0.3s ease;
+}
+
+.proveedor-card:hover img {
+  filter: grayscale(0%); /* Color completo al pasar el mouse */
+}
+
+/* Flechas de navegación modernas */
+.arrow {
+  background: transparent; /* Fondo transparente para limpieza */
+  color: var(--primary-blue); /* Color azul */
+  border: 2px solid transparent;
+  font-size: 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  /* Posicionamiento absoluto para que no afecten el ancho del contenedor */
+  position: absolute;
+  z-index: 2;
+}
+
+.arrow:hover {
+  background: rgba(0, 86, 179, 0.1); /* Fondo azul muy sutil al pasar mouse */
+  transform: scale(1.1); /* Crece un poco */
+}
+
+.arrow.left {
+  left: -60px; /* Mover fuera del contenedor de la tarjeta */
+}
+
+.arrow.right {
+  right: -60px; /* Mover fuera del contenedor de la tarjeta */
+}
+
+/* --- Animación de Carga --- */
+.animate-fade-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0; /* Empieza invisible antes de la animación */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Empieza 30px más abajo */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Termina en su posición original */
+  }
+}
+
+/* Ajustes para móviles (Responsivo) */
+@media (max-width: 768px) {
+    .carrusel-container {
+      max-width: 80%; /* Ocupa más espacio en móvil */
+    }
+    .arrow {
+      /* En móvil, las flechas pueden ser más pequeñas o estar superpuestas */
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .arrow.left { left: -20px; }
+    .arrow.right { right: -20px; }
+}

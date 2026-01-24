@@ -1,0 +1,87 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7); /* Azul muy oscuro con transparencia */
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.modal-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 450px; /* Tamaño máximo elegante */
+  border-radius: 24px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: modalShow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Títulos y Textos */
+.modal-title {
+  color: #1e293b;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 20px 0 10px;
+}
+
+.modal-text {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Botones Dinámicos */
+.modal-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-success { background: #2563eb; color: white; } /* Azul propuesto */
+.btn-success:hover { background: #1d4ed8; transform: translateY(-2px); }
+
+.btn-error { background: #ef4444; color: white; }
+.btn-error:hover { background: #dc2626; }
+
+/* --- Animaciones de Iconos --- */
+.modal-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke-width: 3;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out forwards;
+}
+
+.svg-success { stroke: #2563eb; }
+.svg-error { stroke: #ef4444; }
+
+@keyframes dash { to { stroke-dashoffset: 0; } }
+@keyframes modalShow {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive: Se adapta a cualquier pantalla hasta 768px */
+@media (max-width: 768px) {
+  .modal-card {
+    padding: 30px 20px;
+    max-width: 90%;
+  }
+}

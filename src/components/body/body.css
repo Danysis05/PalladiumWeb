@@ -1,0 +1,245 @@
+.body {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+ 
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* HERO */
+.hero {
+  width: 95%;
+  padding: 60px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  color: white;
+   background: linear-gradient(180deg, #0a1a3a, #102c5c);
+  border-radius: 20px;
+  margin-left: 2.5%;
+}
+
+/* IMAGE */
+.hero img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* TEXT */
+.hero-text h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #cfd9ff;
+}
+/* CONTENEDOR DE LA SECCIÓN */
+.seguros {
+  padding: 80px 0;
+  background-color: #f8faff; /* Un gris muy claro con tinte azul para que resalten las cards blancas */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* Evita que las sombras de las cards generen scroll horizontal innecesario */
+}
+
+/* TÍTULO DE LA SECCIÓN */
+.seguros h2 {
+  font-size: 2.5rem;
+  color: #0a1a3a; /* Azul oscuro del header */
+  font-weight: 800;
+  margin-bottom: 50px;
+  text-align: center;
+  position: relative;
+  letter-spacing: -0.5px;
+}
+
+/* LÍNEA DECORATIVA DEBAJO DEL TÍTULO (Estilo moderno) */
+.seguros h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #4da3ff; /* Celeste del botón del header */
+  margin: 15px auto 0;
+  border-radius: 10px;
+}
+
+/* AJUSTE PARA EL COMPONENTE CARRUSEL DENTRO DE LA SECCIÓN */
+.seguros .carrusel-wrapper {
+  width: 90%;
+  max-width: 1300px;
+}
+
+/* --- RESPONSIVE --- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .seguros {
+    padding: 60px 0;
+  }
+  
+  .seguros h2 {
+    font-size: 2rem;
+  }
+  .proveedores-section {
+    grid-template-columns: 1fr; /* Una sola columna */
+    padding: 60px 5%;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .proveedores-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .proveedores-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .proveedores-subtitle {
+    max-width: 600px;
+  }
+}
+/* --- SECCIÓN PROVEEDORES (ESTÁNDAR / DESKTOP) --- */
+.proveedores-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr; /* Texto izquierda (40%), Carrusel derecha (60%) */
+  align-items: center;
+  gap: 60px;
+  padding: 100px 10%;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.proveedores-header {
+  text-align: left;
+}
+
+.proveedores-header h2 {
+  font-size: 2.8rem;
+  color: #002b5b; /* Azul muy oscuro */
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+/* Línea de acento estilo "seguros" pero en azul */
+.title-accent {
+  width: 60px;
+  height: 4px;
+  background-color: #0056b3; /* Azul medio */
+  border-radius: 2px;
+  margin-top: 15px;
+}
+
+.proveedores-subtitle {
+  font-size: 1.15rem;
+  color: #506690; /* Azul grisáceo para suavizar */
+  line-height: 1.7;
+  max-width: 450px;
+}
+
+.carrusel-wrapper-layout {
+  background: #f0f7ff; /* Fondo azul muy clarito */
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(0, 43, 91, 0.08); /* Sombra sutil azulada */
+}
+
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero img {
+    margin-bottom: 20px;
+  }
+    .seguros {
+    padding: 40px 20px;
+  }
+
+  .seguros h2 {
+    font-size: 1.75rem;
+    margin-bottom: 30px;
+  }
+
+  /* En móvil el título suele verse mejor con la línea más pequeña */
+  .seguros h2::after {
+    width: 40px;
+    height: 3px;
+  }
+  
+  .seguros .carrusel-wrapper {
+    width: 100%; /* Ocupa todo el ancho en móviles */
+  }
+  .whatsapp-Icon {
+    bottom: 15px;
+    right: 15px;
+    transform: scale(0.9);
+  }
+  /* Cambiamos a Flexbox para controlar mejor el stack vertical */
+  .proveedores-section {
+    display: flex;
+    flex-direction: column; 
+    padding: 50px 20px;
+    gap: 30px; /* Espacio entre el texto y el carrusel */
+    text-align: center;
+  }
+
+  .proveedores-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido del header */
+    text-align: center;
+  }
+
+  .proveedores-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    line-height: 1.2;
+  }
+
+  .proveedores-subtitle {
+    font-size: 1rem;
+    max-width: 100%; /* Que ocupe todo el ancho disponible */
+    margin: 0 auto;
+  }
+
+  /* Centramos la línea azul decorativa */
+  .title-accent {
+    width: 50px;
+    height: 3px;
+    margin: 15px auto 0; 
+  }
+
+  .carrusel-wrapper-layout {
+    width: 100%;
+    padding: 25px 15px; /* Reducimos padding interno para que el carrusel respire */
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 43, 91, 0.05);
+  }
+}

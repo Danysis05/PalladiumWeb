@@ -1,0 +1,336 @@
+:root {
+  --primary-blue: #0061ff; /* Azul vibrante de seguros */
+  --dark-blue: #06163a;
+  --accent-blue: #eef4ff;
+  --text-gray: #64748b;
+}
+
+.page-wrapper {
+  background-color: #f8fafc;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+}
+
+/* --- HERO MODERNO --- */
+.hero-section {
+  height: 400px;
+  background: linear-gradient(135deg, rgba(6, 22, 58, 0.92) 0%, rgba(0, 97, 255, 0.8) 100%), 
+              url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  letter-spacing: 4px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.hero-divider {
+  width: 60px;
+  height: 5px;
+  background: white;
+  margin: 15px auto;
+  border-radius: 10px;
+}
+
+.agency-name {
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.hero-subtitle {
+  max-width: 600px;
+  margin: 20px auto 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+/* --- LAYOUT Y TARJETAS --- */
+.content-section {
+  padding: 0 20px 80px;
+  margin-top: -80px; /* Sube las tarjetas sobre el hero */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 30px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.form-card, .info-card {
+  background: white;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.card-desc {
+  color: var(--text-gray);
+  margin-bottom: 30px;
+}
+
+/* --- FORMULARIO (GRID) --- */
+.modern-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.field-group {
+  position: relative;
+}
+
+.field-group input, .field-group textarea {
+  width: 100%;
+  padding: 16px;
+  border: 1.5px solid #edf2f7;
+  border-radius: 12px;
+  background: #fdfdfd;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.field-group label {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  color: #a0aec0;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.field-group input:focus + label,
+.field-group input:not(:placeholder-shown) + label,
+.field-group textarea:focus + label,
+.field-group textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  background: white;
+  padding: 0 6px;
+}
+
+.btn-send {
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-send:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+  box-shadow: 0 10px 20px rgba(0, 97, 255, 0.3);
+}
+
+/* --- INFO CARD (AZUL) --- */
+.info-card {
+  background: var(--dark-blue);
+  color: white;
+}
+
+.info-card h3 { color: white; margin-bottom: 30px; }
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.icon-circle {
+  background: rgba(255, 255, 255, 0.1);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: var(--primary-blue);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.info-label {
+  color: var(--primary-blue);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+/* REDES SOCIALES */
+.social-section {
+  margin-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 30px;
+}
+
+.social-title { font-size: 0.9rem; opacity: 0.7; margin-bottom: 15px; }
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-btn {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+  background: rgba(255,255,255,0.05);
+}
+
+.social-btn:hover { transform: scale(1.1); background: var(--primary-blue); }
+
+/* WHATSAPP FLOAT */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #25d366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+.whatsapp-float:hover { transform: scale(1.15) rotate(10deg); }
+
+/* --- RESPONSIVE OPTIMIZADO --- */
+
+/* TABLETS (992px a 769px) */
+@media (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Apilamos en tablets también para no apretar el contenido */
+    max-width: 700px;
+    padding: 0 15px;
+  }
+
+  .content-section {
+    margin-top: -50px; /* Reducimos el solapamiento */
+  }
+}
+
+/* MÓVILES (768px o menos) */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 320px; /* Hero más bajo en móvil */
+    padding: 0 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .content-section {
+    margin-top: -30px; /* Menos solapamiento para no tapar el texto del hero */
+    padding: 0 15px 50px;
+  }
+
+  .form-card{
+    margin-top: 20px;
+  }
+
+  .form-card, .info-card {
+    padding: 40px 30px; /* Reducimos padding interno para ganar espacio */
+    border-radius: 20px;
+  }
+
+  .input-row {
+    grid-template-columns: 1fr; /* Inputs uno debajo del otro */
+    gap: 20px;
+  }
+
+  .info-card h3 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  /* Invertir orden si prefieres que vean la info antes que el formulario 
+     (Opcional: Descomenta las siguientes 3 líneas) */
+  /* .grid-container {
+    display: flex;
+    flex-direction: column-reverse;
+  } */
+}
+
+/* MÓVILES PEQUEÑOS (480px o menos) */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .icon-circle {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .info-item {
+    gap: 15px;
+  }
+
+  .info-item p {
+    font-size: 0.9rem;
+    word-break: break-all; /* Evita que el email largo rompa el diseño */
+  }
+
+  .social-links {
+    justify-content: center; /* Centramos redes sociales en pantallas muy pequeñas */
+  }
+  
+  .social-title {
+    text-align: center;
+  }
+}

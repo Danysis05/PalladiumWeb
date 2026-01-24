@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+:root {
+  --font-main: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main); /* Aplica a todo el proyecto */
+}
+.whatsapp-Icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;   /* 👉 derecha */
+  z-index: 9999;
+
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-Icon:hover {
+  transform: scale(1.1);
+  rotate: 10deg;
+
+}

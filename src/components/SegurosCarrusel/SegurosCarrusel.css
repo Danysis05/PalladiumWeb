@@ -1,0 +1,151 @@
+/* ================================================= */
+/* CONTENEDOR PRINCIPAL DEL CARRUSEL        */
+/* ================================================= */
+.carrusel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 40px 10px; /* Aumentado ligeramente para no cortar sombras laterales */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* CONTENEDOR DEL SCROLL (Tira de tarjetas) */
+.seguros-carrusel {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  padding: 25px 15px; /* Padding vertical para que el hover no corte la sombra */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+}
+
+.seguros-carrusel::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* ================================================= */
+/* TARJETA (CARD)                    */
+/* ================================================= */
+.seguro {
+  min-width: 280px;
+  background: #ffffff;
+  padding: 20px 20px 30px 20px; 
+  border-radius: 24px;
+  cursor: pointer;
+  text-align: center;
+  scroll-snap-align: center; /* Centra la tarjeta al deslizar en móvil */
+  box-shadow: 0 10px 25px rgba(10, 26, 58, 0.08);
+  border: 1px solid rgba(10, 26, 58, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  /* Nota: No usamos 'transition: transform' aquí porque Framer Motion lo maneja */
+}
+
+/* EFECTO HOVER */
+.seguro:hover {
+  box-shadow: 0 20px 40px rgba(10, 26, 58, 0.12);
+}
+
+/* IMAGEN DENTRO DE LA CARD */
+.seguro img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  user-select: none; /* Evita que el usuario arrastre la imagen accidentalmente */
+  -webkit-user-drag: none;
+}
+
+/* TEXTOS */
+.seguro h3 {
+  color: #0a1a3a;
+  font-size: 1.35rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.seguro p {
+  color: #556075;
+  font-size: 1rem;
+  line-height: 1.6;
+  /* Limitar a 3 líneas para mantener uniformidad */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ================================================= */
+/* FLECHAS DE NAVEGACIÓN                 */
+/* ================================================= */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  border: none;
+  color: #0a1a3a;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(10, 26, 58, 0.15);
+  transition: all 0.3s ease;
+}
+
+.arrow:hover {
+  background: #0a1a3a; /* Cambio a azul oscuro para mayor contraste */
+  color: white;
+  box-shadow: 0 8px 20px rgba(10, 26, 58, 0.3);
+}
+
+.arrow.left { left: -20px; }
+.arrow.right { right: -20px; }
+
+/* ================================================= */
+/* RESPONSIVE                      */
+/* ================================================= */
+
+/* ESCRITORIO (Ajuste para ver 3 cards) */
+@media (min-width: 769px) {
+  .seguro {
+    min-width: calc(33.333% - 25px);
+  }
+}
+
+/* TABLETS Y MÓVILES */
+@media (max-width: 768px) {
+  .carrusel-wrapper {
+    padding: 10px 0;
+  }
+
+  .seguros-carrusel {
+    gap: 15px;
+    padding: 20px 20px; /* Padding lateral para que la card no pegue al borde */
+  }
+
+  .seguro {
+    /* En móvil, que la card ocupe el 80% para dejar ver la siguiente */
+    min-width: 80vw; 
+  }
+
+  .seguro img {
+    height: 160px; /* Imagen un poco más baja */
+  }
+
+  .arrow {
+    display: none; /* Ocultamos flechas para navegación táctil */
+  }
+}

@@ -1,0 +1,163 @@
+.pagos-section {
+  padding: 100px 5%;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.pagos-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.pagos-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f0f7ff;
+  color: #4da3ff;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.pagos-header h2 {
+  font-size: 2.5rem;
+  color: #0a1a3a;
+  margin-bottom: 15px;
+}
+
+.pagos-header h2 strong {
+  color: #4da3ff;
+}
+
+.pagos-header p {
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* CARRUSEL TRACK */
+.pagos-carrusel-wrapper {
+  position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.pagos-track {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  padding: 20px 10px;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  width: 90%;
+}
+
+.pagos-track::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* TARJETA DE PAGO */
+.pago-card {
+  min-width: 300px;
+  max-width: 300px;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid #eee;
+  box-shadow: 0 10px 30px rgba(10, 26, 58, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pago-card:hover {
+  border-color: #4da3ff;
+  box-shadow: 0 15px 40px rgba(77, 163, 255, 0.15);
+}
+
+.card-logo {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.card-logo img {
+  max-height: 100%;
+  max-width: 80%;
+  object-fit: contain;
+}
+
+.card-info h3 {
+  color: #0a1a3a;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.card-info p {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* BOTÓN DE PAGO */
+.btn-pago {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #0a1a3a; /* Azul Oscuro */
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-pago:hover {
+  background-color: #4da3ff; /* Azul brillante */
+  transform: scale(1.02);
+}
+
+/* BOTONES NAVEGACIÓN */
+.nav-btn {
+  background: white;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  color: #0a1a3a;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-btn:hover {
+  background: #4da3ff;
+  color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .pago-card {
+    min-width: 260px;
+  }
+  .nav-btn {
+    display: none; /* En móvil es mejor usar scroll táctil */
+  }
+}

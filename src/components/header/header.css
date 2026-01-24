@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+/* HEADER */
+.header {
+  width: 98%;
+  height: 120px;
+  background: linear-gradient(90deg, #0a1a3a, #102c5c);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  margin: 20px auto;
+  border-radius: 16px;
+}
+
+/* LOGO */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-container img {
+  height: 42px;
+  transition: transform 0.4s ease;
+}
+
+.logo-container:hover img {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+.logo-container h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* NAV DESKTOP */
+.nav{
+  border-radius: 15px;
+}
+.nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #4da3ff;
+  transition: width 0.3s;
+}
+
+.nav a:hover {
+  color: #4da3ff;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* BUTTON */
+.nav .btn {
+  background-color: #4da3ff;
+  color: #0a1a3a;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.nav .btn::after {
+  display: none;
+}
+
+.nav .btn:hover {
+  background-color: white;
+}
+
+/* HAMBURGER (BASE) */
+.hamburger {
+  display: none; /* desktop */
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* ICON ANIMATION */
+.hamburger.active {
+  transform: rotate(360deg);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+/* LINK ACTIVO */
+.nav a.active {
+  color: #4da3ff;
+  font-weight: 600;
+}
+
+.nav a.active::after {
+  width: 100%;
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+  }
+
+  /* MOSTRAR HAMBURGER */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 100%;
+    background: #0a1a3a;
+    transform: translateY(-300%);
+    transition: transform 0.5s ease;
+  }
+
+  .nav.open {
+    transform: translateY(0);
+  }
+
+  .nav ul {
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 20px;
+  }
+
+  .nav .btn {
+    margin-top: 10px;
+  }
+}
